@@ -14,16 +14,14 @@
         </v-toolbar>
         
         <v-navigation-drawer app v-model="drawer" class="blue lighten-2">
-            <v-list>
-                <v-list-tile v-for="link in links" :key="link.text" router :to="link.route">
-                    <v-list-tile-action>
-                        <v-icon class="white--text">{{ link.icon }}</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                        <v-list-tile-title class= "white--text">{{ link.text }}</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-            </v-list>
+            <v-list-item v-for="link in links" :key="link.text" router :to="link.route">
+                <v-list-item-action>
+                    <v-icon class="white--text">{{ link.icon }}</v-icon>
+                </v-list-item-action>        
+                <v-list-item-content>
+                    <v-list-item-title class="white--text">{{ link.text }}</v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
         </v-navigation-drawer>
     </nav>
 </template>
@@ -32,12 +30,12 @@
 export default {
     data(){
         return {
-            drawer: false,
+            drawer: true,
             links: [
                 {  icon: 'dashboard', text: 'Dashboard', route: '/' },
                 {  icon: 'folder', text: 'Items', route: '/items' },
                 {  icon: 'person', text: 'Categories', route: '/categories' },
-                {  icon: 'tags', text: 'Tags', route: '/tags' },
+                {  icon: 'tag', text: 'Tags', route: '/tags' },
             ]
         }
     }
