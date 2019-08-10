@@ -51,6 +51,9 @@
         </v-dialog>
       </v-toolbar>
     </template>
+    <template v-slot:item.status="{ item }">
+      <v-chip :color="getColor(item.status)" dark>{{ item.status }}</v-chip>
+    </template>
     <template v-slot:item.action="{ item }">
       <v-icon
         small
@@ -78,6 +81,7 @@
 export default {
   data() {
     return {
+      dialog: false,
       projects: [],
       headers: [
         {
@@ -104,7 +108,7 @@ export default {
   },
   computed: {
     formTitle () {
-    return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
+    return this.editedIndex === -1 ? 'New Project' : 'Edit Project'
     },
   },
   watch: {
@@ -116,19 +120,16 @@ export default {
     this.initialize()
   },
   methods: {
-    sortBy(prop) {
-      this.projects.sort((a, b) => a[prop] < b[prop] ? -1: 1)
-    },
     getColor (status) {
       if (status == 'ongoing') return 'green'
       else if (status == 'complete') return 'blue'
       else if (status == 'overdue') return 'red'
-      else return 'black'
+      else return 'pink'
     },
     initialize () {
       this.projects = [
         {title: 'Zon Admin', role: 'Backend Developer (Node.js)', status: 'ongoing'},
-        {title: 'Project', role: 'Full Stack Developer', status: 'ongoing'},
+        {title: 'Projec', role: 'Full Stack Developer', status: 'ongoing'},
         {title: 'Zon Maintenence', role: 'Backend Developer (Node.js)', status: 'complete'},    
         {title: 'Shop Admin', role: 'Full Stack Developer', status: 'todo'}
       ]

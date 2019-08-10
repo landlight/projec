@@ -40,7 +40,7 @@ export default {
     return {
       projects: [
         {title: 'Zon Admin', role: 'Backend Developer (Node.js)', status: 'ongoing'},
-        {title: 'Project', role: 'Full Stack Developer', status: 'ongoing'},
+        {title: 'Projec', role: 'Full Stack Developer', status: 'ongoing'},
         {title: 'Zon Maintenence', role: 'Backend Developer (Node.js)', status: 'complete'},    
         {title: 'Shop Admin', role: 'Full Stack Developer', status: 'todo'}
       ]
