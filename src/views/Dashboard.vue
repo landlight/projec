@@ -1,7 +1,7 @@
 <template>
     <div class="dashboard">    
         <v-container class="my-5">
-          <h1 class="subheading black--text">Dashboard</h1>
+          <h1 class="subheading grey--text dark">Dashboard</h1>
           <v-layout row class="mb-3">
             <v-btn small text color="blue" @click="sortBy('title')">
               <v-icon left small>folder</v-icon>
@@ -25,7 +25,7 @@
               </v-flex>
               <v-flex xs6 sm4 md4>
                 <div>
-                  <v-chip :color="getColor(project.status)" class="white--text caption my-2">{{ project.status }}</v-chip>    
+                  <v-chip small :color="getColor(project.status)" class="white--text caption my-2">{{ project.status }}</v-chip>    
                 </div> 
               </v-flex>
             </v-layout>
@@ -54,7 +54,7 @@ export default {
       if (status == 'ongoing') return 'green'
       else if (status == 'complete') return 'blue'
       else if (status == 'overdue') return 'red'
-      else return 'black'
+      else return 'pink'
     },
   }
 };
@@ -62,11 +62,11 @@ export default {
 
 <style>
 .project.complete {
-  border-left: 4px solid blue;
+  border-left: 4px solid cyan;
 }
 
 .project.ongoing {
-  border-left: 4px solid green;
+  border-left: 4px solid greenyellow;
 }
 
 .project.overdue {
@@ -74,7 +74,7 @@ export default {
 }
 
 .project.todo {
-  border-left: 4px solid black;
+  border-left: 4px solid pink;
 }
 
 </style>

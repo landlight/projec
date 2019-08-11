@@ -29,10 +29,12 @@
             <v-card-text>
               <v-container grid-list-md>
                 <v-layout wrap>
-                  <v-flex xs12 sm6 md4>
+                  <v-flex xs12>
                     <v-text-field v-model="editedItem.title" label="Note"></v-text-field>
                   </v-flex>
-                  <v-flex xs12 sm6 md4>
+                </v-layout>
+                <v-layout warp>
+                  <v-flex xs12>
                     <v-text-field v-model="editedItem.message" label="Message"></v-text-field>
                   </v-flex>
                 </v-layout>
@@ -41,8 +43,8 @@
 
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn color="blue darken-1" text @click="close">Cancel</v-btn>
-              <v-btn color="blue darken-1" text @click="save">Save</v-btn>
+              <v-btn color="grey darken-1" text @click="close">Cancel</v-btn>
+              <v-btn color="grey darken-1" text @click="save">Save</v-btn>
             </v-card-actions>
           </v-card>
         </v-dialog>

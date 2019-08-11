@@ -29,18 +29,26 @@
             <v-card-text>
               <v-container grid-list-md>
                 <v-layout wrap>
-                  <v-flex xs12 sm6 md4>
+                  <v-flex xs12>
                     <v-text-field v-model="editedItem.priority" label="Priority"></v-text-field>
                   </v-flex>
-                  <v-flex xs12 sm6 md4>
+                </v-layout>
+                <v-layout wrap>
+                  <v-flex xs12>
                     <v-text-field v-model="editedItem.name" label="Tasks"></v-text-field>
                   </v-flex>
-                  <v-flex xs12 sm6 md4>
+                </v-layout>
+                <v-layout wrap>
+                  <v-flex xs12>
                     <v-text-field v-model="editedItem.status" label="Status"></v-text-field>
                   </v-flex>
-                  <v-flex xs12 sm6 md4>
+                </v-layout>
+                <v-layout wrap>
+                  <v-flex xs12>
                     <v-text-field v-model="editedItem.note" label="Note"></v-text-field>
                   </v-flex>
+                </v-layout>
+                <v-layout wrap>
                   <v-flex xs12 sm6 md4>
                     <v-menu
                         v-model="menu2"
@@ -69,15 +77,15 @@
 
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn color="blue darken-1" text @click="close">Cancel</v-btn>
-              <v-btn color="blue darken-1" text @click="save">Save</v-btn>
+              <v-btn color="grey darken-1" text @click="close">Cancel</v-btn>
+              <v-btn color="grey darken-1" text @click="save">Save</v-btn>
             </v-card-actions>
           </v-card>
         </v-dialog>
       </v-toolbar>
     </template>
     <template v-slot:item.priority="{ item }">
-      <v-chip :color="getColor(getPriority(item.priority))" dark>{{ getPriority(item.priority) }}</v-chip>
+      <v-chip small :color="getColor(getPriority(item.priority))" dark>{{ getPriority(item.priority) }}</v-chip>
     </template>
     <template v-slot:item.action="{ item }">
       <v-icon
@@ -167,12 +175,12 @@ export default {
     }
     ,initialize () {
       this.tasks = [
-        {name: 'Sprint 43', priority: '1', status: 'ongoing', note: 'must finish create reply api', due: 'never'},
-        {name: 'Learn Japanese', priority: '1', status: 'ongoing', note: 'n5 exam on December 1st', due: 'December 01, 2019'},
-        {name: `Finish "Projec" Project`, priority: '2', status: 'ongoing', note: 'Fun project but must be finish within a month', due: 'Obtober 31, 2019'},    
-        {name: 'Learn Korean', priority: '3', status: 'ongoing', note: 'for fun', due: 'never'},
-        {name: 'Learn Chinese', priority: '3', status: 'ongoing', note: 'for fun', due: 'never'},
-        {name: `Learn Thai`, priority: '2', status: 'ongoing', note: 'for fun', due: 'Obtober 31, 2019'},  
+        {name: 'Sprint 43', priority: '1', status: 'ongoing', note: 'must finish create reply api', due: '2999-01-01'},
+        {name: 'Learn Japanese', priority: '1', status: 'ongoing', note: 'n5 exam on December 1st', due: '2019-12-01'},
+        {name: `Finish "Projec" Project`, priority: '2', status: 'ongoing', note: 'Fun project but must be finish within a month', due: '2019-11-01'},    
+        {name: 'Learn Korean', priority: '3', status: 'ongoing', note: 'for fun', due: '2999-01-01'},
+        {name: 'Learn Chinese', priority: '3', status: 'ongoing', note: 'for fun', due: '2999-01-01'},
+        {name: `Learn Thai`, priority: '2', status: 'ongoing', note: 'for fun', due: '2999-01-01'},  
       ]
     },
     editItem (item) {

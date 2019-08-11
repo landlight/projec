@@ -13,7 +13,7 @@
             </v-btn> -->
         </v-app-bar>
 
-        <v-navigation-drawer app v-model="drawer" class="grey">
+        <v-navigation-drawer app v-model="drawer" class="grey" dark>
             <v-layout column align-center class="black lighten-2">
                 <v-flex class="mt-5">
                     <v-avatar size = "100">
