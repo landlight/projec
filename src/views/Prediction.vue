@@ -27,10 +27,12 @@
 
                     <v-card-text>
                     <v-container grid-list-md>
-                        <v-layout wrap>
-                        <v-flex xs12 sm6 md4>
+                      <v-layout wrap>
+                        <v-flex xs12>
                             <v-text-field v-model="editedItem.name" label="Prediction"></v-text-field>
                         </v-flex>
+                      </v-layout>
+                      <v-layout wrap>
                         <v-flex xs12 sm6 md4>
                           <v-menu
                             v-model="menu2"
@@ -53,14 +55,13 @@
                             <v-date-picker v-model="editedItem.date" @input="menu2 = false"></v-date-picker>
                           </v-menu>
                         </v-flex>
-                        </v-layout>
+                      </v-layout>
                     </v-container>
                     </v-card-text>
-
                     <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn color="blue darken-1" text @click="close">Cancel</v-btn>
-                    <v-btn color="blue darken-1" text @click="save">Save</v-btn>
+                    <v-btn color="grey darken-1" text @click="close">Cancel</v-btn>
+                    <v-btn color="grey darken-1" text @click="save">Save</v-btn>
                     </v-card-actions>
                 </v-card>
                 </v-dialog>
@@ -108,6 +109,9 @@ export default {
         { text: 'Date', value: 'date' },
         { text: 'Actions', value: 'action', sortable: false },
       ],
+      menu: false,
+      modal: false,
+      menu2: false,
       editedIndex: -1,
       editedItem: {
         title: '',
@@ -141,10 +145,10 @@ export default {
     },
     initialize () {
       this.predictions = [
-        {name: 'Myanmar BTS Card', date: '10/08/2019'},
-        {name: 'Liverpool Primier League Champion', date: '11/08/2019'},
-        {name: 'Teleportation Device', date: '10/08/2019'},
-        {name: 'Invisibility', date: '11/08/2019'},
+        {name: 'Myanmar BTS Card', date: '2019-08-09'},
+        {name: 'Liverpool Primier League Champion', date: '2019-08-09'},
+        {name: 'Teleportation Device', date: '2019-08-09'},
+        {name: 'Invisibility', date: '2019-08-11'},
       ]
     },
     editItem (item) {
